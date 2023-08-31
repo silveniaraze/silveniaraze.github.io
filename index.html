@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="validateForm(event)">
+      <label for="username">Username</label>
+      <input type="text" id="username" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+  </div>
+  
+  <script>
+function validateForm(event) {
+  event.preventDefault();
+  
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  
+  if (username === "admin" && password === "password") {
+    document.getElementById("message").innerHTML = "Login successful!";
+  } else {
+    document.getElementById("message").innerHTML = "Invalid username or password.";
+  }
+  
+  document.getElementById("loginForm").reset();
+}
+
+  </script>
+</body>
+</html>
